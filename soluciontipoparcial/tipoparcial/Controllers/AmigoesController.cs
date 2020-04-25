@@ -17,12 +17,14 @@ namespace tipoparcial.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/Amigoes
+        [Authorize]
         public IQueryable<Amigo> GetAmigoes()
         {
             return db.Amigoes;
         }
 
         // GET: api/Amigoes/5
+        [Authorize]
         [ResponseType(typeof(Amigo))]
         public IHttpActionResult GetAmigo(int id)
         {
@@ -35,7 +37,23 @@ namespace tipoparcial.Controllers
             return Ok(amigo);
         }
 
+        public object GetAmigo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public object PostAmigo()
+        {
+            throw new NotImplementedException();
+        }
+
+        public object GetAmigo(int v, object id)
+        {
+            throw new NotImplementedException();
+        }
+
         // PUT: api/Amigoes/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutAmigo(int id, Amigo amigo)
         {
@@ -71,6 +89,7 @@ namespace tipoparcial.Controllers
         }
 
         // POST: api/Amigoes
+        [Authorize]
         [ResponseType(typeof(Amigo))]
         public IHttpActionResult PostAmigo(Amigo amigo)
         {
@@ -86,6 +105,7 @@ namespace tipoparcial.Controllers
         }
 
         // DELETE: api/Amigoes/5
+        [Authorize]
         [ResponseType(typeof(Amigo))]
         public IHttpActionResult DeleteAmigo(int id)
         {

@@ -2,7 +2,10 @@
 
 namespace tipoparcial.Models
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
+    using tipoparcial.Controllers;
+
     public enum Typelist
     {
         Qua,
@@ -26,5 +29,9 @@ namespace tipoparcial.Models
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}", ApplyFormatInEditMode = true)]
         public int Birthday { get; set; }
 
+        public static implicit operator Amigo(AmigoesController v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
